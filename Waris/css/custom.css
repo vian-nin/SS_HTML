@@ -453,6 +453,7 @@ margin: 0 10px;
 }
 
 .top-cart-content {
+	top:70px;
 	width: 400px;
 	border-top: 0;
 	border-radius: 0;
@@ -1512,7 +1513,26 @@ padding:0 50px;
 }
 
 .redem-card {
-	padding: 20px;
+	padding: 15px 20px;
+}
+
+.redem-desc ol {
+	padding-left: 20px;
+}
+
+.redem-desc ol li {
+	font-size: 20px;
+	padding-bottom: 10px;
+	color: #777777;
+}
+
+.redem-desc p {
+	color: #777777;
+}
+
+.redem-desc h4 {
+	font-size: 24px;
+	font-weight: 600;
 }
 
 .faqs .toggle {
@@ -1888,6 +1908,33 @@ a:hover {
 	top: 20px;
 }
 
+.form-copy {
+	margin: auto;
+	width: 45%;
+	padding: 15px 10px;
+	border: 1px solid #D2D2D2;
+}
+
+.form-copy input {
+	width: 70%;
+	font-size: 32px;
+	font-weight: 300;
+	color:#1C1C1C;
+	border: none;
+}
+
+.form-copy button {
+	background: none;
+	border: none;
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--btn-blue);
+}
+
+.text-notif p {
+	font-size: 20px;
+}
+
 
 
 @media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
@@ -1918,6 +1965,23 @@ a:hover {
 /*---mobile--*/
 
 @media (max-width: 767px) {
+
+	.redem-desc ol li {
+		font-size: 16px;
+		padding-bottom: 10px;
+		color: #777777;
+	}
+	
+	.redem-desc p {
+		color: #777777;
+	}
+
+	.form-copy {
+		margin: auto;
+		width: 80%;
+		padding: 15px 10px;
+		border: 1px solid #D2D2D2;
+	}
 
 	.ver-click-1 {
 		position: absolute;
