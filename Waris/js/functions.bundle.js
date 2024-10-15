@@ -4836,76 +4836,78 @@ if( typeof jQuery !== 'undefined' ) {
 		 * Accordion Functions Start
 		 * --------------------------------------------------------------------------
 		 */
-		Accordion: function() {
-			return {
-				init: function(selector) {
-					if( __core.getSelector(selector, false, false).length < 1 ){
-						return true;
-					}
+		// Accordion: function() {
+		// 	return {
+		// 		init: function(selector) {
+		// 			if( __core.getSelector(selector, false, false).length < 1 ){
+		// 				return true;
+		// 			}
 
-					__core.isFuncTrue( function() {
-						return typeof jQuery !== 'undefined';
-					}).then( function(cond) {
-						if( !cond ) {
-							return false;
-						}
+		// 			__core.isFuncTrue( function() {
+		// 				return typeof jQuery !== 'undefined';
+		// 			}).then( function(cond) {
+		// 				if( !cond ) {
+		// 					return false;
+		// 				}
 
-						__core.initFunction({ class: 'has-plugin-accordions', event: 'pluginAccordionsReady' });
+		// 				__core.initFunction({ class: 'has-plugin-accordions', event: 'pluginAccordionsReady' });
 
-						selector = __core.getSelector( selector );
-						if( selector.length < 1 ){
-							return true;
-						}
+		// 				selector = __core.getSelector( selector );
+		// 				if( selector.length < 1 ){
+		// 					return true;
+		// 				}
 
-						selector.each( function(){
-							var element = jQuery(this),
-								elState = element.attr('data-state'),
-								elActive = element.attr('data-active') || 1,
-								elActiveClass = element.attr('data-active-class') || '',
-								elCollapsible = element.attr('data-collapsible') || 'false',
-								windowHash = location.hash,
-								accActive;
+		// 				selector.each( function(){
+		// 					var element = jQuery(this),
+		// 						elState = element.attr('data-state'),
+		// 						elActive = element.attr('data-active') || 1,
+		// 						elActiveClass = element.attr('data-active-class') || '',
+		// 						elCollapsible = element.attr('data-collapsible') || 'false',
+		// 						windowHash = location.hash,
+		// 						accActive;
 
-							elActive = Number( elActive ) - 1;
+		// 					elActive = Number( elActive ) - 1;
 
-							if( typeof windowHash !== 'undefined' && windowHash != '' ) {
-								accActive = element.find('.accordion-header'+ windowHash);
-								if( accActive.length > 0 ) {
-									elActive = accActive.index() / 2;
-								}
-							}
+		// 					if( typeof windowHash !== 'undefined' && windowHash != '' ) {
+		// 						accActive = element.find('.accordion-header'+ windowHash);
+		// 						if( accActive.length > 0 ) {
+		// 							elActive = accActive.index() / 2;
+		// 						}
+		// 					}
 
-							element.find('.accordion-content').hide();
+		// 					element.find('.accordion-content').hide();
 
-							if( elState != 'closed' ) {
-								element.find('.accordion-header:eq('+ Number(elActive) +')').addClass('accordion-active ' + elActiveClass).next().show();
-							}
+		// 					if( elState != 'closed' ) {
+		// 						element.find('.accordion-header:eq('+ Number(elActive) +')').addClass('accordion-active ' + elActiveClass).next().show();
+		// 					}
 
-							element.find('.accordion-header').off( 'click' ).on( 'click', function(){
-								var clickTarget = jQuery(this);
 
-								if( clickTarget.next().is(':hidden') ) {
-									element.find('.accordion-header').removeClass('accordion-active ' + elActiveClass).next().slideUp("normal");
-									clickTarget.toggleClass('accordion-active ' + elActiveClass, true).next().stop(true,true).slideDown("normal", function(){
-										if( ( jQuery('body').hasClass('device-sm') || jQuery('body').hasClass('device-xs') ) && element.hasClass('scroll-on-open') ) {
-											__core.scrollTo((__core.offset(clickTarget).top - __core.getVars.topScrollOffset - 40), 800, 'easeOutQuad');
-										}
+		// 					element.find('.accordion-header').off( 'click' ).on( 'click', function(){
+		// 						var clickTarget = jQuery(this);
 
-										__core.runContainerModules( clickTarget.next()[0] );
-									});
-								} else {
-									if( elCollapsible == 'true' ) {
-										clickTarget.toggleClass('accordion-active ' + elActiveClass, false).next().stop(true,true).slideUp("normal");
-									}
-								}
 
-								return false;
-							});
-						});
-					});
-				}
-			};
-		}(),
+		// 						if( clickTarget.next().is(':hidden') ) {
+		// 							element.find('.accordion-header').removeClass('accordion-active ' + elActiveClass).next().slideUp("normal");
+		// 							clickTarget.toggleClass('accordion-active ' + elActiveClass, true).next().stop(true,true).slideDown("normal", function(){
+		// 								if( ( jQuery('body').hasClass('device-sm') || jQuery('body').hasClass('device-xs') ) && element.hasClass('scroll-on-open') ) {
+		// 									__core.scrollTo((__core.offset(clickTarget).top - __core.getVars.topScrollOffset - 40), 800, 'easeOutQuad');
+		// 								}
+
+		// 								__core.runContainerModules( clickTarget.next()[0] );
+		// 							});
+		// 						} else {
+		// 							if( elCollapsible == 'true' ) {
+		// 								clickTarget.toggleClass('accordion-active ' + elActiveClass, false).next().stop(true,true).slideUp("normal");
+		// 							}
+		// 						}
+
+		// 						return false;
+		// 					});
+		// 				});
+		// 			});
+		// 		}
+		// 	};
+		// }(),
 		// Accordion Functions End
 
 		/**
@@ -8800,3 +8802,105 @@ if( typeof jQuery !== 'undefined' ) {
 		// BSComponents Functions End
 	};
 })));
+
+
+
+// custom js
+function showImage(imageClass) {
+	// Sembunyikan semua elemen dengan class 'ver-click'
+	document.querySelectorAll('.ver-click').forEach(function(el) {
+		el.classList.remove('active');
+	});
+
+	// Tampilkan elemen dengan class yang sesuai
+	document.querySelector('.' + imageClass).classList.add('active');
+}
+
+// Tambahkan event listener ke setiap title dari elemen toggle
+document.querySelector('#flush-headingOne .toggle-title').addEventListener('click', function() {
+	showImage('ver-click-1');
+});
+
+document.querySelector('#flush-headingTwo .toggle-title').addEventListener('click', function() {
+	showImage('ver-click-2');
+});
+
+document.querySelector('#flush-headingThree .toggle-title').addEventListener('click', function() {
+	showImage('ver-click-3');
+});
+
+document.querySelector('#flush-headingFour .toggle-title').addEventListener('click', function() {
+	showImage('ver-click-4');
+});
+
+
+// form
+
+jQuery(function() {
+	jQuery('.component-datepicker.default').datepicker({
+		autoclose: true,
+		startDate: "today",
+	});
+
+	jQuery('.component-datepicker.today').datepicker({
+		autoclose: true,
+		startDate: "today",
+		todayHighlight: true
+	});
+
+	jQuery('.component-datepicker.past-enabled').datepicker({
+		autoclose: true,
+	});
+
+	jQuery('.component-datepicker.format').datepicker({
+		autoclose: true,
+		format: "dd-mm-yyyy",
+	});
+
+	jQuery('.component-datepicker.autoclose').datepicker();
+
+	jQuery('.component-datepicker.disabled-week').datepicker({
+		autoclose: true,
+		daysOfWeekDisabled: "0"
+	});
+
+	jQuery('.component-datepicker.highlighted-week').datepicker({
+		autoclose: true,
+		daysOfWeekHighlighted: "0"
+	});
+
+	jQuery('.component-datepicker.mnth').datepicker({
+		autoclose: true,
+		minViewMode: 1,
+		format: "mm/yy"
+	});
+
+	jQuery('.component-datepicker.multidate').datepicker({
+		multidate: true,
+		multidateSeparator: " , "
+	});
+
+	jQuery('.component-datepicker.input-daterange').datepicker({
+		autoclose: true
+	});
+
+	jQuery('.component-datepicker.inline-calendar').datepicker();
+
+	jQuery('.datetimepicker').datetimepicker({
+		showClose: true
+	});
+
+	jQuery('.datetimepicker1').datetimepicker({
+		format: 'LT',
+		showClose: true
+	});
+
+	jQuery('.datetimepicker2').datetimepicker({
+		inline: true,
+		sideBySide: true
+	});
+
+	jQuery('.datetimepicker3,.datetimepicker4').datetimepicker();
+
+	
+});

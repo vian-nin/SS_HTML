@@ -201,21 +201,3 @@ jQuery(function() {
 
 });
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const qrImage = document.getElementById('qr-image');
-    
-    // Add click event for each toggle
-    document.getElementById('toggle-qr').addEventListener('click', function () {
-        qrImage.src = '../images/qr-verification.png';
-    });
-    document.getElementById('toggle-void').addEventListener('click', function () {
-        qrImage.src = '../images/qr-verification-1.png';
-    });
-    document.getElementById('toggle-hologram').addEventListener('click', function () {
-        qrImage.src = '../images/qr-verification-02.png';
-    });
-    document.getElementById('toggle-membrane').addEventListener('click', function () {
-        qrImage.src = '../images/qr-verification-03.png';
-    });
-});

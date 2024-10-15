@@ -9,6 +9,7 @@
 	--color-primary:#1C1C1C;
 	--color-secondary:#B72731;
 	--color-gold: #C3A753;
+	--color-gold2: #A68245;
 	--color-white: #FFFFFF;
 	--btn-blue:#0071BC;
 
@@ -23,8 +24,21 @@
 	font-weight: 600;
 }
 
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
 .pt-30 {
 	padding-top: 30px;
+}
+
+.title-popup {
+	line-height: normal;
+	padding-bottom: 20px;
 }
 
 .entry-title h2 a:hover, a:hover {
@@ -73,6 +87,14 @@
 
 .w-60 {
 	width: 60%;
+}
+
+.w-80 {
+	width: 80%;
+}
+
+.w-90 {
+	width: 90%;
 }
 
 .link-text a {
@@ -135,12 +157,25 @@
 
 .btn-red {
 	background-color: var(--color-secondary);
+	border: solid 1px var(--color-secondary);
+}
+
+.btn-red:hover {
+	background-color: #fad2d3;
+	color: var(--color-secondary);
 }
 
 .btn-red-outline {
 	background-color: var(--color-white);
 	border: solid 1px var(--color-secondary);
 	color: #B72731;
+}
+
+
+.btn-red-outline:hover {
+	background-color: #fad2d3;
+	border: solid 1px var(--color-secondary);
+	color: var(--color-secondary);
 }
 
 .btn-red-outline-2 {
@@ -356,6 +391,10 @@ margin: 0 10px;
 	color: var(--color-gold) !important;
 }
 
+.text-color-gold2 {
+	color: var(--color-gold2) !important;
+}
+
 /*----slider----*/
 
 .slider-caption h2, .slider-caption .h2 {
@@ -496,6 +535,7 @@ padding: 25px 0 70px 0;
 
 
 .banner-dark-desc p {
+	font-weight: 300;
 	margin-bottom: 0;
 	color: #fff;
 }
@@ -519,7 +559,9 @@ padding: 25px 0 70px 0;
 }
 
 .fbox-content h3 {
+	line-height: 60px;
 	font-size: 60px;
+	padding-bottom: 20px;
 }
 
 .fbox-content p {
@@ -646,6 +688,10 @@ flex-flow: column;
 	color: #fff;
 }
 
+.dark#footer .footer-widgets-wrap a:hover {
+	color: var(--color-gold);
+}
+
 .widget h4 {
 	text-transform: capitalize;
 	font-size: 20px;
@@ -663,6 +709,10 @@ flex-flow: column;
 .footer-link li a {
 	padding-left: 0;
 	color: #FFFFFF !important;
+}
+
+.footer-link a:hover {
+	color: var(--color-gold);
 }
 
 #gotoTop {
@@ -715,7 +765,7 @@ cursor: pointer;
 
 .line-white {
 	width: 100%;
-	border-top:1px solid #fff;
+	border-top:1px solid var(--color-gold);
 }
 
 .mr-0 {
@@ -1378,11 +1428,11 @@ padding:0 50px;
 		.feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
 			content: "";
 			position: absolute;
-			top: 0;
+			top: 55px;
 			left: 50%;
-			width: 3px;
+			width: 1px;
 			height: 100%;
-			background-color: #A4A4A4;
+			/* background-color: #A4A4A4; */
 		}
 
 		.feature-box-border-vertical .fbox-icon i,
@@ -1391,7 +1441,7 @@ padding:0 50px;
             position: relative;
 			z-index: 5;
 			text-align: center;
-            box-shadow: 0 0 0 4px #A4A4A4;
+            box-shadow: 0 0 0 1px #A4A4A4;
             background-color: #FFF !important;
 		}
 
@@ -1400,9 +1450,31 @@ padding:0 50px;
         .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
 			border-radius: 100px;
 			border: #A4A4A4;
-            background-color: #A4A4A4;
+            /* background-color: #A4A4A4; */
             color:#FFF;
         }
+
+		.feature-box-border-vertical .fbox-active.vertical-line-none:not(.noborder)::before {
+			display: none !important;
+		}
+
+		.fbox-line {
+			content: "";
+			position: absolute;
+			top: 55px;
+			left: 50%;
+			width: 1px;
+			height: 100%;
+			background-color: #A4A4A4;
+		}
+
+.fbox-right {
+	margin-left: 40px;
+}
+
+.fbox-left{
+	margin-right: 40px;
+}
 
 .card-edisi {
 		padding: 30px;
@@ -1427,6 +1499,7 @@ padding:0 50px;
 }
 
 .contact-area {
+	margin: 20px;
 	padding: 30px;
 }
 
@@ -1711,6 +1784,93 @@ a:hover {
 	color: var(--color-primary) !important;
 }
 
+.ver-click-1 {
+	position: absolute;
+	bottom: -30px;
+	left: 150px;
+}
+
+.ver-click-2 {
+	position: absolute;
+	bottom: -30px;
+	left: 200px;
+}
+
+.ver-click-3 {
+    width: 400px;
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+}
+
+.ver-click-4 {
+
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+
+ /* Sembunyikan semua gambar pada awalnya */
+ .ver-click {
+	display: none;
+}
+
+/* Tampilkan gambar ketika class "active" ditambahkan */
+.ver-click.active {
+	display: block;
+}
+
+.misi-text p {
+	font-weight: 300;
+}
+
+.why-card {
+	padding: 20px 40px;
+}
+
+/*---accordion--*/
+.accordion-item {
+	border: solid 1px #A4A4A4;
+	background-color: transparent;
+}
+
+.accordion-button {
+	padding: 20px 5px;
+	font-weight: 600;
+	font-size: 30px;
+	background: none;
+}
+
+.accordion-button:not(.collapsed) {
+	box-shadow:none;
+	background: transparent;
+	border: none;
+	color: var(--color-primary);
+}
+
+.accordion-button:focus, .accordion-button:visited {
+	border: none;
+	box-shadow: none;
+}
+
+.accordion-body {
+	padding: 0;
+}
+
+.accordion-button::after {
+	filter: invert(75%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(85%);
+}
+
+.close-btn-absolute {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+img {
+    max-width: inherit !important;
+}
+
 @media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
 	.bottom-nav {
 		position: fixed;
@@ -1739,6 +1899,33 @@ a:hover {
 /*---mobile--*/
 
 @media (max-width: 767px) {
+
+	.ver-click-1 {
+		position: absolute;
+		bottom: 0;
+		max-width: 150px;
+		left: -9px;
+	}
+
+	.ver-click-2 {
+		position: absolute;
+		bottom: -30px;
+		left: 0;
+	}
+
+	.ver-click-3 {
+		width: 250px;
+		position: absolute;
+		bottom: 25px;
+		right: -20px;
+	}
+
+	.ver-click-4 {
+		max-width: 200px;
+		position: absolute;
+		bottom: 0;
+		right: -25px;
+	}
 
 	.waris-point {
 		padding-bottom: 35px;
@@ -1796,6 +1983,16 @@ a:hover {
 
 	.feature-box-border-vertical .feature-box:not(.noborder)::before, .feature-box-border-vertical .fbox-active.feature-box:not(.noborder)::after {
 		left: 95%;
+	}
+
+	.fbox-line {
+		content: "";
+		position: absolute;
+		top: 120px;
+		left: 95%;
+		width: 1px;
+		height: 100%;
+		background-color: #A4A4A4;
 	}
 
 	.fbox-content {
