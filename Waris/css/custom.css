@@ -1935,6 +1935,17 @@ a:hover {
 	font-size: 20px;
 }
 
+.flex-control-nav.flex-control-thumbs {
+	padding-top: 30px;
+}
+
+.flex-control-nav.flex-control-thumbs li {
+	margin-right: 20px;
+}
+
+.flex-control-nav.flex-control-thumbs li img {
+	opacity: 1;
+}
 
 
 @media screen and (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
